@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/badge/License-BSD-red.svg)](https://github.com/t3l3machus/hoaxshell/blob/main/LICENSE.md)
 <img src="https://img.shields.io/badge/Maintained%3F-Yes-96c40f">
 
-## Purpose
+## Description
 This package is a reverse shell generator for Windows systems that uses sockets to establish a connection. It is highly capable of bypassing antivirus software. The package includes a control server and comes with a number of useful features.  
 
 ## Features
