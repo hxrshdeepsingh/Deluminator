@@ -40,5 +40,7 @@ python aurora.py payload --help
 python aurora.py payload --name <NAME> --host <HOST> --port <PORT> --time <RECONNECTION TIME>
 ```
 
+[Source Code](https://github.com/hxrshdeepsingh/Deluminator) - Github
+
 ## Disclaimer
 This tool is for educational and testing purposes only. Do not use its payloads on hosts without proper authorization. You are responsible for any consequences resulting from its use.
