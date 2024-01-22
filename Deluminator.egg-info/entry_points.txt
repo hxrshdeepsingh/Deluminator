@@ -1,0 +1,2 @@
+[console_scripts]
+Deluminator = Deluminator.main:Deluminator

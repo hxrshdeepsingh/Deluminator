@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='Deluminator',
-    version='0.1',
+    version='1.0',
     author='Harshdeep Singh',
     author_email='ishu.cxx@gmail.com',
     license='BSD-3-Clause',
