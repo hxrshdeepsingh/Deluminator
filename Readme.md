@@ -6,6 +6,8 @@
 ## Description
 This package is a reverse shell generator for Windows systems that uses sockets to establish a connection. It is highly capable of bypassing antivirus software. The package includes a control server and comes with a number of useful features.  
 
+[https://deluminator.hxrshdeep.cloud/]
+
 ## Features
 - Root shell `Coming soon`
 - System information
