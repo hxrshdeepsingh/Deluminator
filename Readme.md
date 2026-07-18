@@ -4,15 +4,15 @@
 <img src="https://img.shields.io/badge/Maintained%3F-Yes-96c40f">
 
 ## Description
-This package is a reverse shell generator for Windows systems that uses sockets to establish a connection. It is highly capable of bypassing antivirus software. The package includes a control server and comes with a number of useful features.  
 
-https://deluminator.hxrshdeep.cloud/
+This package is a reverse shell generator for Windows systems that uses sockets to establish a connection. It is highly capable of bypassing antivirus software. The package includes a control server and comes with a number of useful features.
 
 ## Features
+
 - Root shell `Coming soon`
 - System information
-- Delete files & folder on the host machine. 
-- Execute commands on target machine. 
+- Delete files & folder on the host machine.
+- Execute commands on target machine.
 - Upload/Download any type of files. `Coming soon`
 - Get all processes running in a system.
 - Kill process by name, id etc...
@@ -21,26 +21,13 @@ https://deluminator.hxrshdeep.cloud/
 - Start/Restart windows system.
 - Screenshot `Coming soon`
 
-## How to install
-```
-pip install deluminator
-```  
+## Documentation
 
-## Setup Server
-```
-python aurora.py server --help
-```
-```
-python aurora.py server --host <HOST> --port <PORT>
-```
-
-## Build Payload
-```
-python aurora.py payload --help
-```
-```
-python aurora.py payload --name <NAME> --host <HOST> --port <PORT> --time <RECONNECTION TIME>
-```
+- [[Installation]]
+- [[Usage]]
+- [[Bypass]]
+- [[Disclaimer]]
 
 ## Disclaimer
+
 This tool is for educational and testing purposes only. Do not use its payloads on hosts without proper authorization. You are responsible for any consequences resulting from its use.
