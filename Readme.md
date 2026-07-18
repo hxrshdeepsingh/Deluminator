@@ -23,10 +23,10 @@ This package is a reverse shell generator for Windows systems that uses sockets 
 
 ## Documentation
 
-- [[Installation]]
-- [[Usage]]
-- [[Bypass]]
-- [[Disclaimer]]
+- [Installation](../../wiki/Installation)
+- [Usage](../../wiki/Usage)
+- [Bypass](../../wiki/Bypass)
+- [Disclaimer](../../wiki/Disclaimer)
 
 ## Disclaimer
 
