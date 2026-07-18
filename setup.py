@@ -3,8 +3,6 @@
 from setuptools import setup, find_packages
 
 
-
-
 setup(
     name='Deluminator',
     version='3.13.19',
