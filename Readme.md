@@ -23,10 +23,11 @@ This package is a reverse shell generator for Windows systems that uses sockets 
 
 ## Documentation
 
-- [Installation](../../wiki/Installation)
-- [Usage](../../wiki/Usage)
-- [Bypass](../../wiki/Bypass)
-- [Disclaimer](../../wiki/Disclaimer)
+- [Home](https://github.com/hxrshdeepsingh/Deluminator/wiki/Home)
+- [Installation](https://github.com/hxrshdeepsingh/Deluminator/wiki/Installation)
+- [Usage](https://github.com/hxrshdeepsingh/Deluminator/wiki/Usage)
+- [Bypass](https://github.com/hxrshdeepsingh/Deluminator/wiki/Bypass)
+- [Disclaimer](https://github.com/hxrshdeepsingh/Deluminator/wiki/Disclaimer)
 
 ## Disclaimer
 
