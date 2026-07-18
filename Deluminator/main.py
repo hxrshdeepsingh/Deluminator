@@ -3,7 +3,7 @@ from .engine import sd
 from .engine import pd
 
 # Main
-@click.group(help="⚡ Deluminator @v1.0")
+@click.group(help="Deluminator")
 def Deluminator():
     pass
 

